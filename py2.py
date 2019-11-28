@@ -6,6 +6,8 @@ p = RawProxy()
 # Alice's transaction ID
 txid = "0627052b6f28912f2703066a912ea577f2ce4da4caa5a5fbd8a57286c345c2f2"
 
+txid = input("Iveskite transakcijos ID\n")
+
 # First, retrieve the raw transaction in hex
 raw_tx = p.getrawtransaction(txid)
 
@@ -27,4 +29,3 @@ for output in decoded_tx['vout']:
     output_sum += output['value']
 
 print(str(input_sum) + " - " + str(output_sum) + " = " + str(input_sum - output_sum))
-#    print(output['scriptPubKey']['addresses'], output['value'])
